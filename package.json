@@ -1,0 +1,27 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "Portfolio Site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/forrest-wilson/portfolio-website.git"
+  },
+  "author": "Forrest Wilson-Jennings",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/forrest-wilson/portfolio-website/issues"
+  },
+  "homepage": "https://github.com/forrest-wilson/portfolio-website",
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-autoprefixer": "4.1.0",
+    "gulp-clean": "0.4.0",
+    "gulp-sass": "3.1.0",
+    "gulp-sourcemaps": "1.12.1",
+    "run-sequence": "2.2.1"
+  }
+}
