@@ -1,0 +1,14 @@
+////////////////
+//// Layout ////
+////////////////
+
+.ajax-loader {
+    @include positioning(fixed, 0, 0, 0, 0);
+
+    .ajax-image {
+        @include positioning(absolute, $l: 50%, $t: 50%);
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: 100px;
+    }
+}
