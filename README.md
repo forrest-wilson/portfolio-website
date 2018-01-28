@@ -2,13 +2,13 @@
 
 ## Starting the Dev Server
 
+Builds the /tmp directory and starts up the dev server.
+
 ```
 gulp start
 ```
 
-Builds the /tmp directory and starts up the dev server.
-
-Runs on 
+Runs on:
 
 ```
 localhost:3000/tmp/
