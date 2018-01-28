@@ -7,14 +7,17 @@
 
     <title>Forrest Wilson</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400" rel="stylesheet">
+    <!-- jq:js -->
+    <!-- endinject -->
+
+    <!-- loader:js -->
+    <!-- endinject -->
 
     <!-- inject:css -->
     <!-- endinject -->
 
-    <!-- inject:js -->
-    <!-- endinject -->
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400" rel="stylesheet">
 </head>
 <body>
     <div id="ajaxLoader" class="ajax-loader">
@@ -25,21 +28,35 @@
         <header>
             <nav>
                 <img class="logo" src="/tmp/assets/images/logo_100x100.png" alt="Logo">
-                <div class="hamburger-button clearfix">
+                <div id="hamburgerButton" class="hamburger-button clearfix">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </nav>
-            <ul class="mobile-nav-dropdown">
-                <li>Home</li>
-                <li>Projects</li>
-                <li>Twitter</li>
-                <li>Github</li>
-            </ul>
         </header>
 
-        <h1>Here is a header</h1>
+        <main>
+            <h1>Here is a header</h1>
+        </main>
     </div>
+
+    <div id="mobileNavDropdown" class="mobile-nav-dropdown frame">
+        <div class="close-wrapper clearfix">
+            <div id="closeNavButton" class="close-nav-button clearfix">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <ul class="mobile-nav">
+            <li>Home</li>
+            <li>Projects</li>
+            <li>Twitter</li>
+            <li>Github</li>
+        </ul>
+    </div>
+
+    <!-- inject:js -->
+    <!-- endinject -->
 </body>
 </html>
