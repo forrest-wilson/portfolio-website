@@ -28,8 +28,10 @@ gulp.task("inject", function() {
     var target = gulp.src(paths.src + "/index.html"),
         sources = gulp.src([
             paths.module + "/normalize.css/normalize.css",
+            paths.module + "/font-awesome/css/font-awesome.min.css",
             paths.tmp + "/css/*.css",
             paths.module + "/jquery/dist/jquery.min.js",
+            paths.tmp + "/js/loader.js",
             paths.tmp + "/js/app.js"
         ],
         { read: false }
