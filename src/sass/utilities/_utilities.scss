@@ -1,0 +1,9 @@
+///////////////////
+//// Utilities ////
+///////////////////
+
+.clearfix:after {
+    clear: both;
+    display: table;
+    content: " ";
+}
