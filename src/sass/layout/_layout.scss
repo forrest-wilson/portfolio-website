@@ -20,6 +20,7 @@
     padding: 10px 20px;
     border: 5px solid $primaryBlack;
     z-index: 50;
+    transition: filter $transitionSpeed;
 }
 
 header {
@@ -31,4 +32,11 @@ header {
         width: 50px;
         height: 50px;
     }
+}
+
+.mobile-nav-dropdown {
+    @include positioning(fixed, 0, 0, 0, 0);
+    background-color: white;
+    opacity: 0.9;
+    display: none;
 }
