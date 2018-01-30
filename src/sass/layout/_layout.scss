@@ -23,6 +23,10 @@
 }
 
 header {
+    &.inner {
+        padding-bottom: 0px;
+    }
+
     nav {
         padding: 20px 0;
     }
