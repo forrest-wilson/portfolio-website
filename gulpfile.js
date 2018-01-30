@@ -2,6 +2,7 @@ var gulp = require("gulp"),
     clean = require("gulp-clean"),
     sass = require("gulp-sass"),
     inject = require("gulp-inject"),
+    jshint = require("gulp-jshint"),
     autoprefixer = require("gulp-autoprefixer"),
     sourcemaps = require("gulp-sourcemaps"),
     browserSync = require("browser-sync").create(),
@@ -49,17 +50,18 @@ gulp.task("sass", function() {
         .pipe(gulp.dest(paths.tmp + "/css/"));
 });
 
-gulp.task("copy", function() {
-    var js = gulp.src(paths.src + "/js/*.js")
+gulp.task("lint", function() {
+    return gulp.src(paths.src + "/js/*.js")
+        .pipe(jshint())
+        .pipe(jshint.reporter("default"))
         .pipe(gulp.dest(paths.tmp + "/js/"));
-    
-    var html = gulp.src(paths.src + "/*.html")
-        .pipe(gulp.dest(paths.tmp));
+});
 
+gulp.task("copy", function() {
     var assets = gulp.src(paths.src + "/assets/**/*.*")
         .pipe(gulp.dest(paths.tmp + "/assets/"));
 
-    return merge(js, html, assets);
+    return merge(assets);
 });
 
 gulp.task("serve", function() {
@@ -84,7 +86,7 @@ gulp.task("reload-browser", function() {
 });
 
 gulp.task("build:tmp", function(cb) {
-    runSequence("cleanTmp", "sass", "copy", "inject", "reload-browser", cb);
+    runSequence("cleanTmp", "sass", "lint", "copy", "inject", "reload-browser", cb);
 });
 
 gulp.task("start", ["build:tmp", "serve"], function(cb) {
