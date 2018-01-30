@@ -2,6 +2,20 @@
 //// State ////
 ///////////////
 
-.blur {
-    filter: blur(2px);
+.active-menu {
+    span {
+        &:nth-child(1) {
+            transform: translateY(-50%) rotate(-45deg);
+            top: 50%;
+        }
+
+        &:nth-child(2) {
+            transform: translateY(-50%) rotate(45deg);
+            top: 50%;
+        }
+    }
+}
+
+.is-open {
+    max-height: 152px;
 }

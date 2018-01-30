@@ -6,7 +6,7 @@
     @include positioning(fixed, 0, 0, 0, 0);
     transition: $transitionSpeed;
     background-color: white;
-    z-index: 100;
+    z-index: 1000;
 
     .ajax-image {
         @include positioning(absolute, $l: 50%, $t: 50%);
@@ -35,9 +35,26 @@ header {
 }
 
 .mobile-nav-dropdown {
-    @include positioning(fixed, 0, 0, 0, 0);
-    background-color: white;
-    opacity: 0.9;
-    display: none;
-    border: 5px solid rgba(0, 0, 0, 0);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height $transitionSpeed ease-in-out;
+    box-shadow: inset 0px 0px 10px grey;
+    margin: 0 -20px;
+    background-color: rgb(250, 250, 250);
+}
+
+.mobile-nav {
+    height: 100%;
+    padding: 20px 40px;
+    margin: 0;
+    list-style-type: none;
+
+    li {
+        a {
+            text-decoration: none;
+            color: $blueColor;
+            font-size: 20px;
+            line-height: 1.4em;
+        }
+    }
 }
