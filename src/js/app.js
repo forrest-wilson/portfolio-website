@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    "use strict";
+
     //**** Variables ****//
 
     var transitionSpeed = 400;
@@ -15,7 +17,7 @@ $(document).ready(function() {
         $("#frame").removeClass("blur");
     }
 
-    //**** Events Triggers ****//
+    //**** Event Triggers ****//
 
     $("#hamburgerButton").on("click", function() {
         showNav();
