@@ -1,29 +1,31 @@
 $(document).ready(function() {
     "use strict";
-
+    
+    //*******************//
     //**** Variables ****//
+    //*******************//
 
     var transitionSpeed = 400;
 
+    //*************************//
     //**** Event Functions ****//
+    //*************************//
 
-    function showNav() {
-        $("#mobileNavDropdown").fadeIn(transitionSpeed);
-        $("#frame").addClass("blur");
+    function toggleNav() {
+        $("#hamburgerButton").toggleClass("active-menu");
+        $("#closeNavButton").toggleClass("active-menu");
+        $("#mobileNavDropdown").toggleClass("is-open");
     }
 
-    function hideNav() {
-        $("#mobileNavDropdown").fadeOut(transitionSpeed);
-        $("#frame").removeClass("blur");
-    }
-
+    //************************//
     //**** Event Triggers ****//
+    //************************//
 
     $("#hamburgerButton").on("click", function() {
-        showNav();
+        toggleNav();
     });
 
     $("#closeNavButton").on("click", function() {
-        hideNav();
+        toggleNav();
     });
 });
