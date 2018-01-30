@@ -7,3 +7,7 @@ $transitionSpeed: 400ms;
 // Colors
 $primaryBlack: #575866;
 $blueColor: #0062FF;
+
+// Bezier Curves
+$buttonBezier: cubic-bezier(.8, -0.6, .2, 1.6);
+$elementBezier: cubic-bezier(.8, 0, .2, 1);
