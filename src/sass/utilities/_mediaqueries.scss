@@ -1,0 +1,21 @@
+///////////////////////
+//// Media Queries ////
+///////////////////////
+
+@media screen and (min-width: 600px) {
+    .desktop-nav-wrapper {
+        display: block!important;
+    }
+
+    .hamburger-wrapper {
+        display: none!important;
+    }
+    
+    .profile-image,
+    .profile-blurb {
+        max-width: 50%!important;
+        vertical-align: middle;
+        display: inline-block!important;
+        white-space: normal;
+    }
+}
