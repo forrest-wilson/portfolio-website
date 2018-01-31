@@ -61,7 +61,10 @@ gulp.task("copy", function() {
     var assets = gulp.src(paths.src + "/assets/**/*.*")
         .pipe(gulp.dest(paths.tmp + "/assets/"));
 
-    return merge(assets);
+    var favicon = gulp.src(paths.src + "/favicon.png")
+    .pipe(gulp.dest(paths.tmp));
+
+    return merge(assets, favicon);
 });
 
 gulp.task("serve", function() {
