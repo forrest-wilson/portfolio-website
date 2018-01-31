@@ -18,30 +18,51 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link type="image/png" rel="icon" href="./favicon.png">
 </head>
 <body>
     <div id="ajaxLoader" class="ajax-loader">
-        <img class="ajax-image" src="/tmp/assets/images/ripple.svg" alt="Ajax Loader">
+        <img class="ajax-image" src="./assets/images/ripple.svg" alt="Ajax Loader">
     </div>
 
     <div id="frame" class="frame">
-        <header class="inner">
+        <header class="inner max-width">
             <nav>
-                <img class="logo" src="/tmp/assets/images/logo_100x100.png" alt="Logo">
-                <div id="hamburgerButton" class="hamburger-button clearfix">
-                    <span></span>
-                    <span></span>
+                <img class="logo" src="./assets/images/logo_100x100.png" alt="Logo">
+                <div id="hamburgerWrapper" class="hamburger-wrapper clearfix">
+                    <div id="hamburgerButton" class="hamburger-button clearfix">
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="menu-title clearfix">MENU</span>
                 </div>
-                <span class="menu-title clearfix">MENU</span>
+                <div id="desktopNavWrapper" class="desktop-nav-wrapper clearfix">
+                    <ul class="desktop-nav">
+                        <!-- <li>
+                            <a href="#">Home</a>
+                        </li> -->
+                        <!-- <li>
+                            <a href="#">Projects</a>
+                        </li> -->
+                        <li>
+                            <a href="https://twitter.com/fwilsonj" target="_blank">Twitter</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/forrest-wilson" target="_blank">Github</a>
+                        </li>
+                    </ul>
+                </div>
             </nav>
             <div id="mobileNavDropdown" class="mobile-nav-dropdown">
                 <ul class="mobile-nav">
-                    <li>
+                    <!-- <li>
                         <a href="#"><i class="fa fa-home"></i> - Home</a>
-                    </li>
-                    <li>
+                    </li> -->
+                    <!-- <li>
                         <a href="#"><i class="fa fa-code"></i> - Projects</a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="https://twitter.com/fwilsonj" target="_blank"><i class="fa fa-twitter"></i> - Twitter</a>
                     </li>
@@ -53,17 +74,36 @@
         </header>
 
         <main class="inner">
-            <section class="inner">
-                <h1>Hi, I'm Forrest.</h1>
-                <h1>I'm a Front End Web Developer / UX Designer based in Wellington, New Zealand.</h1>
-                <img class="profile-image" src="/tmp/assets/images/forrest.jpg" alt="Profile Image">
+            <section class="intro max-width clearfix">
+                <h1 class="blurb inner">Hi, I'm Forrest. I'm a Front End Web Developer / UX Designer based in Wellington, New Zealand.</h1>
+                <img class="profile-image inner clearfix" src="./assets/images/forrest.jpg" alt="Profile Image"><!--
+                --><article class="profile-blurb inner clearfix">
+                    <h2><strong>About:</strong></h2>
+                    <p>As mentioned above, I am a Front End Web Developer and UX Designer living in Wellington, New Zealand. I predominantly work as freelance developer allowing for work on a range of different projects.</p>
+                </article>
             </section>
-            <section>
-                <h3><strong>About:</strong></h3>
-                <p>As mentioned above, I am a Front End Web Developer and UX Designer living in Wellington, New Zealand.</p>
-                <p>I predominantly work as freelance developer.</p>
+            <section class="services inner max-width">
+                <article>
+                    <h2><strong>Services:</strong></h2>
+                    <h3 class="subheading">UX/UI:</h3>
+                    <p>UX and UI development involves planning and iteration of a sites' design, structure, and layout. Once the proper infomation architecture is in place, a visual design layer is applied to make an experience tailored to the end user.</p>
+                </article>
+                <article>
+                    <h3 class="subheading">Front End Development:</h3>
+                    <p>Front end development is building the visual components of a website. I use HTML, CSS, and JavaScript to create fast and interactive websites.</p>
+                </article>
+            </section>
+            <section class="contact inner">
+                <div class="content-wrapper">
+                    <h1>Keen to work on a project together?</h1>
+                    <a href="mailto:forrest.wilson@me.com" class="button">Contact Me</a>
+                </div>
             </section>
         </main>
+
+        <footer class="inner">
+            <p><i class="fa fa-copyright"></i> Copyright Forrest Wilson-Jennings 2018</p>
+        </footer>
     </div>
 
     <!-- inject:js -->
