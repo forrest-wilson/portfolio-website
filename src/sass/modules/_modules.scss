@@ -2,6 +2,11 @@
 //// Modules ////
 /////////////////
 
+.hamburger-wrapper {
+    float: right;
+    display: block;
+}
+
 .hamburger-button {
     float: right;
     width: 50px;
@@ -37,5 +42,52 @@
 }
 
 .profile-image {
-    width: 100%;
+    width: 80%;
+    max-width: 350px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.intro {
+    .blurb {
+        margin: 2em auto;
+        max-width: 600px;
+        text-align: center;
+    }
+}
+
+.subheading {
+    font-weight: 400;
+}
+
+.services {
+    article {
+        padding-bottom: 10px;
+    }
+}
+
+.contact {
+    text-align: center;
+    box-shadow: inset 0px 0px 10px;
+    margin: 0 -20px;
+
+    .content-wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+.button {
+    padding: 20px 25px;
+    border: 2px solid $primaryBlack;
+    display: inline-block;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 0 0 20px 0;
+    color: $blueColor;
+}
+
+footer {
+    text-align: center;
 }
