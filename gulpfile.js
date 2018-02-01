@@ -34,6 +34,7 @@ gulp.task("inject", function() {
         .pipe(inject(gulp.src([
             paths.tmp + "/js/injector.js",
             paths.module + "/jquery/dist/jquery.min.js",
+            paths.module + "/jquery-ui/ui/effect.js",
             paths.tmp + "/js/loader.js"
         ], { read: false }),
         { name: "preload" }))
@@ -143,6 +144,7 @@ gulp.task("html", function() {
         .pipe(inject(gulp.src([
             paths.dist + "/js/injector.min.js",
             paths.module + "/jquery/dist/jquery.min.js",
+            paths.module + "/jquery-ui/ui/effect.js",
             paths.dist + "/js/loader.min.js"
         ], { read: false }),
         {
@@ -156,6 +158,7 @@ gulp.task("html", function() {
             paths.dist + "/js/app.min.js",
         ], { read: false }), { ignorePath: ["/dist"] }))
         .pipe(replace("/node_modules/jquery/dist/jquery.min.js", "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"))
+        .pipe(replace("/node_modules/jquery-ui/ui/effect.js", "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"))
         .pipe(replace("/node_modules/font-awesome/css/font-awesome.min.css", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"))
         .pipe(replace("/node_modules/normalize.css/normalize.css", "https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"))
         .pipe(htmlmin({
