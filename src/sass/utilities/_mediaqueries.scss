@@ -4,18 +4,18 @@
 
 @media screen and (min-width: 600px) {
     .desktop-nav-wrapper {
-        display: block!important;
+        display: block;
     }
 
     .hamburger-wrapper {
-        display: none!important;
+        display: none;
     }
     
     .profile-image,
     .profile-blurb {
-        max-width: 50%!important;
+        max-width: 50%;
         vertical-align: middle;
-        display: inline-block!important;
+        display: inline-block;
         white-space: normal;
     }
 }
