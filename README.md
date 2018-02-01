@@ -8,7 +8,7 @@ Builds the /tmp directory and starts up the dev server.
 gulp start
 ```
 
-Runs on:
+Check console for URL. Default is:
 
 ```
 localhost:3000/tmp/
@@ -22,8 +22,8 @@ Builds the /dist directory and starts up the production server.
 gulp dist
 ```
 
-Runs on:
+Check console for URL. Default is:
 
 ```
-localhost:3002
+localhost:3000
 ```
