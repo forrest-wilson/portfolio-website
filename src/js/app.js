@@ -5,14 +5,17 @@ $(document).ready(function() {
     //**** Variables ****//
     //*******************//
 
+    //*******************//
+    //**** Functions ****//
+    //*******************//
+
     //*************************//
     //**** Event Functions ****//
     //*************************//
 
     function toggleNav() {
         $("#hamburgerButton").toggleClass("active-menu");
-        $("#closeNavButton").toggleClass("active-menu");
-        $("#mobileNavDropdown").toggleClass("is-open");
+        $("#mobileNavDropdown").slideToggle(400, "easeInOutQuart");
     }
 
     //************************//
@@ -20,10 +23,6 @@ $(document).ready(function() {
     //************************//
 
     $(document).on("click", "#hamburgerButton", function() {
-        toggleNav();
-    });
-
-    $(document).on("click", "#closeNavButton", function() {
         toggleNav();
     });
 });
