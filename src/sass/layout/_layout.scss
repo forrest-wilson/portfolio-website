@@ -44,12 +44,12 @@ header {
 }
 
 .mobile-nav-dropdown {
-    max-height: 0;
     overflow: hidden;
     transition: max-height $transitionSpeed $elementBezier;
     box-shadow: inset 0px 0px 10px grey;
     margin: 0 -20px;
     background-color: rgb(250, 250, 250);
+    display: none;
 }
 
 .mobile-nav,
