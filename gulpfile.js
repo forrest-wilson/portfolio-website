@@ -31,9 +31,12 @@ gulp.task("cleanTmp", function() {
 
 gulp.task("inject", function() {
     return gulp.src(paths.src + "/index.html")
-        .pipe(inject(gulp.src(paths.module + "/jquery/dist/jquery.min.js", { read: false }), { name: "jq" }))
-        .pipe(inject(gulp.src(paths.tmp + "/js/injector.js", { read: false }), { name: "injector"}))
-        .pipe(inject(gulp.src(paths.tmp + "/js/loader.js", { read: false }), { name: "loader" }))
+        .pipe(inject(gulp.src([
+            paths.tmp + "/js/injector.js",
+            paths.module + "/jquery/dist/jquery.min.js",
+            paths.tmp + "/js/loader.js"
+        ], { read: false }),
+        { name: "preload" }))
         .pipe(inject(gulp.src([
             paths.module + "/normalize.css/normalize.css",
             paths.module + "/font-awesome/css/font-awesome.min.css",
@@ -137,13 +140,13 @@ gulp.task("js", function() {
 
 gulp.task("html", function() {
     return gulp.src(paths.src + "/index.html")
-        .pipe(inject(gulp.src(paths.dist + "/js/injector.min.js", { read: false }), {
-            name: "injector",
-            ignorePath: ["/dist"]
-        }))
-        .pipe(inject(gulp.src(paths.module + "/jquery/dist/jquery.min.js", { read: false }), { name: "jq" }))
-        .pipe(inject(gulp.src(paths.dist + "/js/loader.min.js", { read: false }), {
-            name: "loader",
+        .pipe(inject(gulp.src([
+            paths.dist + "/js/injector.min.js",
+            paths.module + "/jquery/dist/jquery.min.js",
+            paths.dist + "/js/loader.min.js"
+        ], { read: false }),
+        {
+            name: "preload",
             ignorePath: ["/dist"]
         }))
         .pipe(inject(gulp.src([
@@ -151,7 +154,7 @@ gulp.task("html", function() {
             paths.module + "/font-awesome/css/font-awesome.min.css",
             paths.dist + "/css/style.min.css",
             paths.dist + "/js/app.min.js",
-        ]), { ignorePath: ["/dist"] }))
+        ], { read: false }), { ignorePath: ["/dist"] }))
         .pipe(replace("/node_modules/jquery/dist/jquery.min.js", "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"))
         .pipe(replace("/node_modules/font-awesome/css/font-awesome.min.css", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"))
         .pipe(replace("/node_modules/normalize.css/normalize.css", "https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"))
