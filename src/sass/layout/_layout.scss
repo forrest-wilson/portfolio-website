@@ -20,6 +20,8 @@
     border: 5px solid $primaryBlack;
     z-index: 50;
     transition: filter $transitionSpeed;
+    display: none;
+    opacity: 0;
 }
 
 header {

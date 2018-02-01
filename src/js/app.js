@@ -19,11 +19,11 @@ $(document).ready(function() {
     //**** Event Triggers ****//
     //************************//
 
-    $("#hamburgerButton").on("click", function() {
+    $(document).on("click", "#hamburgerButton", function() {
         toggleNav();
     });
 
-    $("#closeNavButton").on("click", function() {
+    $(document).on("click", "#closeNavButton", function() {
         toggleNav();
     });
 });

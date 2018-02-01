@@ -32,6 +32,7 @@ gulp.task("cleanTmp", function() {
 gulp.task("inject", function() {
     return gulp.src(paths.src + "/index.html")
         .pipe(inject(gulp.src(paths.module + "/jquery/dist/jquery.min.js", { read: false }), { name: "jq" }))
+        .pipe(inject(gulp.src(paths.tmp + "/js/injector.js", { read: false }), { name: "injector"}))
         .pipe(inject(gulp.src(paths.tmp + "/js/loader.js", { read: false }), { name: "loader" }))
         .pipe(inject(gulp.src([
             paths.module + "/normalize.css/normalize.css",
@@ -66,9 +67,12 @@ gulp.task("copy", function() {
         .pipe(gulp.dest(paths.tmp + "/assets/"));
 
     var favicon = gulp.src(paths.src + "/favicon.png")
-    .pipe(gulp.dest(paths.tmp));
+        .pipe(gulp.dest(paths.tmp));
 
-    return merge(assets, favicon);
+    var modules = gulp.src(paths.src + "/modules/**/*.*")
+        .pipe(gulp.dest(paths.tmp + "/modules/"));
+
+    return merge(assets, favicon, modules);
 });
 
 gulp.task("serve", function() {
@@ -133,6 +137,10 @@ gulp.task("js", function() {
 
 gulp.task("html", function() {
     return gulp.src(paths.src + "/index.html")
+        .pipe(inject(gulp.src(paths.dist + "/js/injector.min.js", { read: false }), {
+            name: "injector",
+            ignorePath: ["/dist"]
+        }))
         .pipe(inject(gulp.src(paths.module + "/jquery/dist/jquery.min.js", { read: false }), { name: "jq" }))
         .pipe(inject(gulp.src(paths.dist + "/js/loader.min.js", { read: false }), {
             name: "loader",
@@ -161,7 +169,10 @@ gulp.task("copy:dist", function() {
     var favicon = gulp.src(paths.src + "/favicon.png")
         .pipe(gulp.dest(paths.dist));
 
-    return merge(assets, favicon);
+    var modules = gulp.src(paths.src + "/modules/**.*")
+        .pipe(gulp.dest(paths.dist + "/modules/"));
+
+    return merge(assets, favicon, modules);
 });
 
 gulp.task("serve:dist", function() {
@@ -189,6 +200,6 @@ gulp.task("build:dist", function(cb) {
     runSequence("clean:dist", "css", "js", "html", "copy:dist", "reload:dist", cb);
 });
 
-gulp.task("dist", ["build:dist", "serve:dist"], function(cb) {
+gulp.task("build", ["build:dist", "serve:dist"], function(cb) {
     gulp.watch(paths.src + "/**/*.*", ["build:dist"], cb);
 });
